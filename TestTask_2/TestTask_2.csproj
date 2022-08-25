@@ -124,8 +124,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Departament.cs" />
+    <Compile Include="Models\Pc.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkWithDB\dbConn.cs" />
+    <Compile Include="WorkWithDB\UsersWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\TestDb.mdf" />
