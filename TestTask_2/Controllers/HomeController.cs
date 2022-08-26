@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TestTask_2.WorkWithDB;
 
 namespace TestTask_2.Controllers
 {
@@ -10,6 +11,7 @@ namespace TestTask_2.Controllers
     {
         public ActionResult Index()
         {
+            var us = new UsersContext().Get();
             return View();
         }
 

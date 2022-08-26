@@ -124,12 +124,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Abstract\Model.cs" />
     <Compile Include="Models\Departament.cs" />
     <Compile Include="Models\Pc.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkWithDB\dbConn.cs" />
-    <Compile Include="WorkWithDB\UsersWork.cs" />
+    <Compile Include="WorkWithDB\DepartamentsContext.cs" />
+    <Compile Include="WorkWithDB\Interfaces\IContext.cs" />
+    <Compile Include="WorkWithDB\PcContext.cs" />
+    <Compile Include="WorkWithDB\UsersContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\TestDb.mdf" />
@@ -147,6 +151,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\Components\my-elem.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />

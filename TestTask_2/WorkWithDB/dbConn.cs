@@ -11,8 +11,9 @@ namespace TestTask_2.WorkWithDB
     {
         public static bool GetConnection(out SqlConnection conn)
         {
-            string dir = Directory.GetCurrentDirectory();
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + dir + @"\TestDb.mdf;Integrated Security=True";
+            //string dir = Directory.GetCurrentDirectory();
+            //string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + dir + @"\TestDb.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\mikheev_av1\source\repos\TestTask_2\TestTask_2\App_Data\TestDb.mdf;Integrated Security=True";
             try
             {
                 conn = new SqlConnection(connectionString);

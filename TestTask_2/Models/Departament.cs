@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using TestTask_2.Models.Abstract;
 
 namespace TestTask_2.Models
 {
-    public class Departament
+    public class Departament : Model
     {
-        public string Id { get; set; }
         public string Name { get; set; }
     }
 }
