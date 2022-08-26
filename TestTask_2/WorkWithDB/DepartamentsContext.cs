@@ -48,14 +48,10 @@ namespace TestTask_2.WorkWithDB
             return result;
         }
 
-        //public void Insert<T>(T item) where T: Departament
-        public void Insert(Model item)
+        public void Insert(Model model)
         {
-            if (item.GetType() == typeof(Departament))
-            {
-                item in Departament;
-            }
-            if (dbConn.GetConnection(out conn))
+            Departament item = model as Departament;            
+            if (item != null && dbConn.GetConnection(out conn))
             {
                 query = "INSERT Departaments ('Name') VALUES (@Name)";
                 cmd = conn.CreateCommand();
@@ -79,14 +75,15 @@ namespace TestTask_2.WorkWithDB
             }
         }
 
-        public void Update(Departament item)
+        public void Update(Model model)
         {
-            if (dbConn.GetConnection(out conn))
+            Departament item = model as Departament;
+            if (item != null && dbConn.GetConnection(out conn))
             {
                 query = "UPDATE Departaments SET Name=@Name WHERE Id=@Id";
                 cmd = conn.CreateCommand();
                 cmd.CommandText = query;
-                cmd.Parameters.AddWithValue("Cpu", item.Name);
+                cmd.Parameters.AddWithValue("Name", item.Name);
                 cmd.Parameters.AddWithValue("Id", item.Id);
                 try
                 {
@@ -106,9 +103,10 @@ namespace TestTask_2.WorkWithDB
             }
         }
 
-        public void Delete(Departament item)
+        public void Delete(Model model)
         {
-            if (dbConn.GetConnection(out conn))
+            Departament item = model as Departament;
+            if (item != null && dbConn.GetConnection(out conn))
             {
                 query = "DELETE FROM Departaments WHERE Id=@Id";
                 cmd = conn.CreateCommand();

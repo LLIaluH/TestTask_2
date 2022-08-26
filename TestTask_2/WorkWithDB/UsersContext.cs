@@ -6,10 +6,12 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using TestTask_2.Models;
+using TestTask_2.Models.Abstract;
+using TestTask_2.WorkWithDB.Interfaces;
 
 namespace TestTask_2.WorkWithDB
 {
-    public class UsersContext
+    public class UsersContext : IContext
     {
         string query;
         SqlCommand cmd;
@@ -46,9 +48,10 @@ namespace TestTask_2.WorkWithDB
             return result;
         }
 
-        public void Insert(User item)
+        public void Insert(Model model)
         {
-            if (dbConn.GetConnection(out conn))
+            User item = model as User;
+            if (item != null && dbConn.GetConnection(out conn))
             {
                 query = "INSERT Users ('UserName', 'Salary', 'DepartamentId', 'PCId') VALUES (@UserName, @Salary, @DepartamentId, @PCId)";
                 cmd = conn.CreateCommand();
@@ -75,9 +78,10 @@ namespace TestTask_2.WorkWithDB
             }            
         }
 
-        public void Update(User item)
+        public void Update(Model model)
         {
-            if (dbConn.GetConnection(out conn))
+            User item = model as User;
+            if (item != null && dbConn.GetConnection(out conn))
             {
                 query = "UPDATE Users SET UserName=@UserName, Salary=@Salary, DepartamentId=@DepartamentId, PCId=@PCId WHERE Id=@Id";
                 cmd = conn.CreateCommand();
@@ -105,9 +109,10 @@ namespace TestTask_2.WorkWithDB
             }
         }
 
-        public void Delete(User item)
+        public void Delete(Model model)
         {
-            if (dbConn.GetConnection(out conn))
+            User item = model as User;
+            if (item != null && dbConn.GetConnection(out conn))
             {
                 query = "DELETE FROM Users WHERE Id=@Id";
                 cmd = conn.CreateCommand();

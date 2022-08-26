@@ -6,10 +6,12 @@ using System.Linq;
 using System.Web;
 using TestTask_2.Models;
 using Newtonsoft.Json;
+using TestTask_2.Models.Abstract;
+using TestTask_2.WorkWithDB.Interfaces;
 
 namespace TestTask_2.WorkWithDB
 {
-    public class PcContext
+    public class PcContext : IContext
     {
         string query;
         SqlCommand cmd;
@@ -46,9 +48,10 @@ namespace TestTask_2.WorkWithDB
             return result;
         }
 
-        public void Insert(Pc item)
+        public void Insert(Model model)
         {
-            if (dbConn.GetConnection(out conn))
+            Pc item = model as Pc;
+            if (item != null && dbConn.GetConnection(out conn))
             {
                 query = "INSERT PC ('Cpu', 'Memory', 'Hdd') VALUES (@Cpu, @Memory, @Hdd)";
                 cmd = conn.CreateCommand();
@@ -74,9 +77,10 @@ namespace TestTask_2.WorkWithDB
             }
         }
 
-        public void Update(Pc item)
+        public void Update(Model model)
         {
-            if (dbConn.GetConnection(out conn))
+            Pc item = model as Pc;
+            if (item != null && dbConn.GetConnection(out conn))
             {
                 query = "UPDATE PC SET Cpu=@Cpu, Memory=@Memory, Hdd=@Hdd WHERE Id=@Id";
                 cmd = conn.CreateCommand();
@@ -103,9 +107,10 @@ namespace TestTask_2.WorkWithDB
             }
         }
 
-        public void Delete(Pc item)
+        public void Delete(Model model)
         {
-            if (dbConn.GetConnection(out conn))
+            Pc item = model as Pc;
+            if (item != null && dbConn.GetConnection(out conn))
             {
                 query = "DELETE FROM PC WHERE Id=@Id";
                 cmd = conn.CreateCommand();
