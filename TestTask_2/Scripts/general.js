@@ -15,4 +15,6 @@ function StopSpiner(Parent) {
 
 function ShowDetails(b) {
     var id = b.id;
+    document.location.href = '/Home/Index/' + id;
+    //показываем PC
 }

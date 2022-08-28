@@ -39,7 +39,7 @@
                     }
                     else if (keys[k] == 'PCId') {
                         var pcid = this.dataObj[i][keys[k]];
-                        html += '<td><button id="' + pcid +'" class="floating-button" onclick="ShowDetails(this)">Подробнее</button></td>';
+                        html += '<td><button id="' + pcid +'" class="floating-button" onclick="ShowDetails(this)" type="submit">Подробнее</button></td>';
                         continue;
                     }
                     html += '<td>' + this.dataObj[i][keys[k]] + '</td>';

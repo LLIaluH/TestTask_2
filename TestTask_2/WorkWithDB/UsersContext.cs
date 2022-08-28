@@ -23,9 +23,9 @@ namespace TestTask_2.WorkWithDB
             if (dbConn.GetConnection(out conn))
             {
                 //query = "SELECT * FROM Users";
-                query = "SELECT * FROM AddressParts";
-                //query = "SELECT U.Id, U.UserName, U.Salary, D.Name, U.PCId " +
-                //    "FROM Users U JOIN Departaments D ON U.DepartamentId = D.Id";
+                //query = "SELECT * FROM AddressParts";//для проверки пустых данных
+                query = "SELECT U.Id, U.UserName, U.Salary, D.Name, U.PCId " +
+                    "FROM Users U JOIN Departaments D ON U.DepartamentId = D.Id";
                 cmd = conn.CreateCommand();
                 cmd.CommandText = query;
                 try
