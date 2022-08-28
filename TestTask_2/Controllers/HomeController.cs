@@ -12,7 +12,15 @@ namespace TestTask_2.Controllers
         public ActionResult Index()
         {
             var us = new UsersContext().Get();
+            ViewBag.Users = us;
             return View();
+        }
+
+        [HttpGet]
+        public void GetSpecificPC(string id)
+        {
+            ViewBag.PC = id;
+            //return View();
         }
 
         public ActionResult About()

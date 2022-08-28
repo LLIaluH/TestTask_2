@@ -1,8 +1,10 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
-<my-elem id="testComp1"></my-elem>
+@*<script>
+    StartSpiner('screen');
+</script>*@
+<my-table id="userTable" data="@ViewBag.Users"></my-table>
 
 @*<div class="jumbotron">
     <h1>ASP.NET</h1>

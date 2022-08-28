@@ -22,8 +22,15 @@ namespace TestTask_2
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/Components").Include(
-          "~/Scripts/Components/test-comp.js"));
+            bundles.Add(new ScriptBundle("~/bundles/сomponents").Include(
+                      "~/Scripts/Components/my-table.js"));
+           
+            //bundles.Add(new ScriptBundle("~/bundles/Components1").Include(
+            //          "~/Scripts/Components/row-table.js"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/general").Include(
+                      "~/Scripts/general.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
