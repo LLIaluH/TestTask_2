@@ -1,22 +1,20 @@
 ﻿class PCView extends HTMLElement {
     constructor() {
         super();
-        //this.renderMe = function () {
-        //    render();
-        //}
+        this.dataObj = JSON.parse(this.getAttribute('data'));
+
     }
 
     Arr = [];
     render() {
         let html;
-        let data = JSON.parse(this.getAttribute('data'));
         if (data != null) {
             Arr.push(data);
             for (var i = 0; i < data.length; i++) {
-                html += '<div class="myCell">' + data[i] + '</div>';
+                html += '<div class="backModalScreen">' + data[i] + '</div>';
             }
         } else {
-            html = 'Нет данных';
+            html = 'Ошибка';
         }
         this.innerHTML = html;
     }

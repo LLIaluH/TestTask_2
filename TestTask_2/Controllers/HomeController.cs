@@ -13,14 +13,10 @@ namespace TestTask_2.Controllers
         {
             var us = new UsersContext().Get();
             ViewBag.Users = us;
+            //я надеюсь, что это в данном случае не так важно, что я тяну все пк из бд, просто если бы можно было пользоваться EF я бы сделал по человечески
+            var pcs = new PcContext().Get();
+            ViewBag.PCs = pcs;
             return View();
-        }
-
-        [HttpGet]
-        public void GetSpecificPC(string id)
-        {
-            ViewBag.PC = id;
-            //return View();
         }
 
         public ActionResult About()

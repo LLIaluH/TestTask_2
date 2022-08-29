@@ -24,7 +24,7 @@ namespace TestTask_2.WorkWithDB
             {
                 //query = "SELECT * FROM Users";
                 //query = "SELECT * FROM AddressParts";//для проверки пустых данных
-                query = "SELECT U.Id, U.UserName, U.Salary, D.Name, U.PCId " +
+                query = "SELECT U.Id, U.UserName AS 'Имя', U.Salary AS 'З/П', D.Name AS 'Департамент', U.PCId AS 'ПК'" +
                     "FROM Users U JOIN Departaments D ON U.DepartamentId = D.Id";
                 cmd = conn.CreateCommand();
                 cmd.CommandText = query;

@@ -15,6 +15,18 @@ function StopSpiner(Parent) {
 
 function ShowDetails(b) {
     var id = b.id;
-    document.location.href = '/Home/Index/' + id;
+    //document.location.href = '/Home/Index/' + id;
     //показываем PC
+
+}
+
+changeFilter = function (idMyTable, f) {
+    //сам ничего не понял, первым параметром сую id таблицы на странице, а приходит объект моего тэга...
+    //ну и ладно, так даже удобнее
+    let filterloc = f.value;
+    if (filterloc.trim() != '') {
+        idMyTable.filter = filterloc;
+        //idMyTable.filterF();//почему это не работает, я так и не разобрался, пока захардкодил
+        $('#userTable')[0].filterF();
+    }
 }
