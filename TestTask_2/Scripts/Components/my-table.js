@@ -11,14 +11,15 @@
     filterF() {
         if (this.filter == '') {
             this.fiteredData = null;
+            this.render();
             return;
         }
         this.fiteredFocus = true;
         this.fiteredData = new Array();
-        var re = new RegExp('.?' + this.filter + '.?');
+        var re = new RegExp('.?' + this.filter.toUpperCase() + '.?');
         for (var i = 0; i < this.dataObj.length; i++) {
             for (var k = 0; k < this.keys.length; k++) {
-                if (String(this.dataObj[i][this.keys[k]]).match(re)) {
+                if (String(this.dataObj[i][this.keys[k]]).toUpperCase().match(re)) {
                     //захардкодил по названиям столбцов, но в идеале просто исключить регулярным выражением по md5 
                     if (this.keys[k] == 'Id' || this.keys[k] == 'ПК') {
                         continue;
@@ -40,8 +41,8 @@
             this.keys = keys;
             this.dataObj = data;
 
-            if (this.fiteredData == null) {
-                this.fiteredData = data;
+            if (this.filter == '') {
+                this.fiteredData = this.dataObj;
             }
 
             //сколько строк отображать
@@ -68,7 +69,7 @@
                     //}
                     if (keys[k] == 'ПК') {
                         var pcid = this.fiteredData[i][keys[k]];
-                        html += '<td><button id="' + pcid +'" class="floating-button" onclick="ShowDetails(this)" type="submit">Подробнее</button></td>';
+                        html += '<td style="text-align:center;"><button id="' + pcid +'" class="floating-button" onclick="ShowDetails(this)" type="submit">Подробнее</button></td>';
                         continue;
                     }
                     html += '<td>' + this.fiteredData[i][keys[k]] + '</td>';

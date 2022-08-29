@@ -96,7 +96,7 @@
     height: 30px;
     line-height: 10px;
     border-radius: 45px;
-    margin-top: 6px;
+    margin-top: 5px;
     /*font-family: 'Montserrat', sans-serif;*/
     font-size: 11px;
     text-transform: uppercase;
@@ -138,36 +138,50 @@ textarea {
 
 /*#region loader */
     .loader {
-        border: 16px solid #38383847;
+        border: 10px solid #38383847;
         border-radius: 50%;
-        border-top: 16px solid #ffffff00;
+        border-top: 10px solid #ffffff00;
         width: 100px;
         height: 100px;
         -webkit-animation: spin 2s linear infinite; /* Safari */
-        animation: spin 2s linear infinite;
+        animation: spin 1s linear infinite;
         position: absolute;
         left: calc(50% - 50px);
         top: calc(50% - 50px);
-        z-index: 10000;
+        z-index: 9998;
     }
 
     @-webkit-keyframes spin {
         0% {
             -webkit-transform: rotate(0deg);
+            opacity:0%;
+        }
+
+        50% {
+            -webkit-transform: rotate(180deg);
+            opacity: 100%;
         }
 
         100% {
             -webkit-transform: rotate(360deg);
+            opacity: 100%;
         }
     }
 
     @keyframes spin {
         0% {
             transform: rotate(0deg);
+            opacity: 0%;
+        }
+
+        50% {
+            transform: rotate(180deg);
+            opacity: 100%;
         }
 
         100% {
             transform: rotate(360deg);
+            opacity: 0%;
         }
     }
 /*#endregion */
