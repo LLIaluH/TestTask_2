@@ -1,0 +1,19 @@
+﻿CREATE FUNCTION dbo.MyFunc
+(
+	@param1 varchar(50)
+)
+RETURNS varchar(200)
+AS
+BEGIN
+	DECLARE @nextId varchar(200);
+
+	SELECT @nextId = A.ParentId
+	FROM AddressParts A
+	WHERE A.Id = @param1;
+
+	IF (@nextId IS NOT NULL) 
+		RETURN @param1;
+	ELSE
+		RETURN @param1 + '/' + dbo.MyFunc(@nextId);
+	RETURN '';
+END

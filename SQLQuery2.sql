@@ -29,5 +29,7 @@ FROM PC P JOIN USERS U ON P.Id = U.PCId,
 WHERE U.DepartamentId = T1.id AND T1.sm = (SELECT MAX(T2.sm) FROM (SELECT D.Id id, SUM(U.Salary) AS sm
 										FROM Users U JOIN Departaments D ON U.DepartamentId = D.Id
 										GROUP BY D.Id, D.Name) T2)
-	
-
+										
+SELECT dbo.MyFunc ('1d95001e-2eee-411f-b83a-4da673d5e7c1') --Дом 1/ул. Пушкина/г. Санкт-Петербург
+SELECT dbo.MyFunc ('5b7f0bf1-8ba2-4a2f-9a6f-d6843c60a65c') --ул. Пушкина/г. Москва
+SELECT dbo.MyFunc ('3e0fb8ad-e095-4da2-81fa-5e67834701a5') --г. Москва

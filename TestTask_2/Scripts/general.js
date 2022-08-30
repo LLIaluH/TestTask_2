@@ -13,14 +13,19 @@ function StopSpiner(Parent) {
     }
 }
 
+//показываем PC
 function ShowDetails(b) {
-    var id = b.id;
-    //document.location.href = '/Home/Index/' + id;
-    //показываем PC
+    let id = b.id;
+    $('#pcView')[0].showPC(id);
+}
+
+function hide(id) {
+    //var a = id;
+    $('#pcView')[0].hide();
 
 }
 
-changeFilter = function (idMyTable, f) {
+function changeFilter(idMyTable, f) {
     StartSpiner('screen');
     setTimeout(() => StopSpiner('screen'), 1000);
 

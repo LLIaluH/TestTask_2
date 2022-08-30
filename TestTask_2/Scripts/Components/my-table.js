@@ -34,10 +34,10 @@
 
     render() {
         let html = '';
-        let data = JSON.parse(this.getAttribute('data'));
+        let data = JSON.parse(this.getAttribute('data')) || null;
         if (data != null && data.length > 0) {
             html += '<input id="filter' + this.id + '" class="filter" onfocus="this.selectionStart = this.selectionEnd = this.value.length;" placeholder="Поле фильтрации" oninput="changeFilter(' + this.id + ', this)" value="' + this.filter + '"></input>';
-            let keys = Object.keys(data[0])
+            let keys = Object.keys(data[0]);
             this.keys = keys;
             this.dataObj = data;
 
@@ -54,9 +54,6 @@
 
             html += '<table class="table">';
             for (var k = 1; k < keys.length; k++) {
-                //if (keys[k] == 'Id') {
-                //    continue;
-                //}
                 html += '<th>' + keys[k] + '</th>';
             }
 
@@ -64,9 +61,6 @@
                 html += '<tr>';
 
                 for (var k = 1; k < keys.length; k++) {
-                    //if (keys[k] == 'Id') {
-                    //    continue;
-                    //}
                     if (keys[k] == 'ПК') {
                         var pcid = this.fiteredData[i][keys[k]];
                         html += '<td style="text-align:center;"><button id="' + pcid +'" class="floating-button" onclick="ShowDetails(this)" type="submit">Подробнее</button></td>';
@@ -92,7 +86,7 @@
                 document.getElementById('filter' + this.id).focus();
             }
             try {
-                this.querySelector("a").addEventListener("click", () => {
+                this.querySelector("#loadMore").addEventListener("click", () => {
                     if (this.fiteredData.length < 10 * this.countClicksMore) {
                         return;
                     }

@@ -23,10 +23,7 @@ namespace TestTask_2
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/сomponents").Include(
-                      "~/Scripts/Components/my-table.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/components1").Include(
-                      "~/Scripts/Components/my-pc-view.js"));
+                      "~/Scripts/Components/my-table.js", "~/Scripts/Components/my-pc-view.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/general").Include(
                       "~/Scripts/general.js"));

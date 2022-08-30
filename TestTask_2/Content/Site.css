@@ -1,4 +1,8 @@
-﻿body {
+﻿:root{
+    --width-modal:350px;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -18,11 +22,65 @@
 
 .backModalScreen {
     position: fixed;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background-color:#000000aa;
+    background-color: #000000aa;
+
 }
+
+.centerPC {
+    position: relative;
+    top: calc(50% - 150px);
+    left: calc(50% - (var(--width-modal) / 2));
+    /*    top: calc(50% - 150px);
+    left: calc(50% - 250px);*/
+    height: 300px;
+    width: var(--width-modal);
+    min-width: 350px;
+    min-height: 300px;
+    background-color: #effff4;
+    border: 0px;
+    border-radius: 18px;
+    box-shadow: 0 0 20px 2px rgb(239 255 244 / 63%);
+    transition: 0.3s;
+    padding: 18px;
+}
+
+    .centerPC .myLabel {
+        font-weight: 600;
+    }
+
+.form-group {
+    margin-bottom: 3px !important;
+}
+
+    .centerPC button {
+        position: absolute;
+        right: -10px;
+        bottom: -12px;
+        /*float: right;*/
+        border: 6px solid #e02626;
+        border-radius: 30px;
+        background-color: #e02626;
+        transition: 0.3s;
+        color: white;
+        box-shadow: 0 0px 12px #e0262699;
+        font-weight: 700;
+    }
+
+        .centerPC button:hover {
+            border: 1px solid #e02626;
+            bottom: -7px;
+            right: -5px;
+            /*transform: translateY(-4px);*/
+            background-color: #e02626;
+            box-shadow: 0 0px 2px #e0262699;
+        }
+
+
 
 .filter {
     text-align: center;
@@ -79,7 +137,7 @@
     }
 
     .table tbody tr:nth-child(even) {
-        background: #f3f3f3;
+        background: #d1d1d147;
     }
 
 .NoData{
