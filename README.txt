@@ -1,4 +1,4 @@
-Для запуска приложения нужно поменять пусть до БД в файле C:\Users\mikheev_av1\source\repos\TestTask_2\TestTask_2\WorkWithDB\dbConn.cs
+Для запуска приложения нужно поменять путь до БД в файле C:\Users\mikheev_av1\source\repos\TestTask_2\TestTask_2\WorkWithDB\dbConn.cs
 заменить значение "connectionString" на значение соответствующее вашей строке подключения к локальной БД, которая лежит ~\TestTask_2\TestTask_2\App_Data\TestDb.mdf
 
 Для проверки задания на SQL необходимо подключиться к бд и создать новый запрос, затем скопировать всё из файла SQLQuery2 (в корне репозитория) и вставить в созданный запрос.
