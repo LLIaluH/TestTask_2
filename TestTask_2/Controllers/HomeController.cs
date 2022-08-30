@@ -14,22 +14,9 @@ namespace TestTask_2.Controllers
             var us = new UsersContext().Get();
             ViewBag.Users = us;
             //я надеюсь, что это в данном случае не так важно, что я тяну все пк из бд, просто если бы можно было пользоваться EF я бы сделал по человечески
+            //Ну я ещё хотел вариант с Ajax запросом. Но не стал запариваться. Или ещё чуть более мудрённый вариант с SignalR
             var pcs = new PcContext().Get();
             ViewBag.PCs = pcs;
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }
